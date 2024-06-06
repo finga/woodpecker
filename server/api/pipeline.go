@@ -64,6 +64,9 @@ func CreatePipeline(c *gin.Context) {
 
 	user := session.User(c)
 
+	// here we must do the commit thing
+	log.Error().Msg("We are trying to get the commits from here")
+
 	lastCommit, _ := _forge.BranchHead(c, user, repo, opts.Branch)
 
 	tmpPipeline := createTmpPipeline(model.EventManual, lastCommit, user, &opts)

@@ -21,15 +21,16 @@ import (
 type (
 	// Workflow defines a workflow configuration.
 	Workflow struct {
-		When      constraint.When   `yaml:"when,omitempty"`
-		Workspace Workspace         `yaml:"workspace,omitempty"`
-		Clone     ContainerList     `yaml:"clone,omitempty"`
-		Steps     ContainerList     `yaml:"steps,omitempty"`
-		Services  ContainerList     `yaml:"services,omitempty"`
-		Labels    map[string]string `yaml:"labels,omitempty"`
-		DependsOn []string          `yaml:"depends_on,omitempty"`
-		RunsOn    []string          `yaml:"runs_on,omitempty"`
-		SkipClone bool              `yaml:"skip_clone"`
+		When          constraint.When   `yaml:"when,omitempty"`
+		Workspace     Workspace         `yaml:"workspace,omitempty"`
+		Clone         ContainerList     `yaml:"clone,omitempty"`
+		Steps         ContainerList     `yaml:"steps,omitempty"`
+		Services      ContainerList     `yaml:"services,omitempty"`
+		Labels        map[string]string `yaml:"labels,omitempty"`
+		DependsOn     []string          `yaml:"depends_on,omitempty"`
+		RunsOn        []string          `yaml:"runs_on,omitempty"`
+		SkipClone     bool              `yaml:"skip_clone"`
+		RunEachCommit bool              `yaml:"run_each_commit"`
 
 		// Undocumented
 		Networks WorkflowNetworks `yaml:"networks,omitempty"`

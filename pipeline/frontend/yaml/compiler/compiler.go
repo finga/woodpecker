@@ -167,7 +167,7 @@ func (c *Compiler) Compile(conf *yaml_types.Workflow) (*backend_types.Config, er
 		cloneImage = c.defaultCloneImage
 	}
 
-	// add default clone step
+	// add default clone step, add checking out commits here somewhere
 	if !c.local && len(conf.Clone.ContainerList) == 0 && !conf.SkipClone {
 		cloneSettings := map[string]any{"depth": "0"}
 		if c.metadata.Curr.Event == metadata.EventTag {
